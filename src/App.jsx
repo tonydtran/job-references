@@ -4,16 +4,19 @@ import './App.scss'
 
 const ANIMATION_SPEED = '400ms'
 const ANIMATION_DELAY = 150
+const BLACK = '#000'
+const WHITE = '#fff'
+const BOX_SHADOW_COLOR = 'rgba(0, 0, 0, 0.5)'
+const PROFILE_LINK = 'https://linktr.ee/anthony_tranvan'
+
 console.log(
-  "Hello 👋 ! N'hésitez-pas à consulter mon profil à cette adresse : https://linktr.ee/anthony_tranvan"
+  `Hello 👋 ! N'hésitez-pas à consulter mon profil à cette adresse : ${PROFILE_LINK}`
 )
 
 function App() {
   return (
     <Container>
-      <Link href="https://linktr.ee/anthony_tranvan">
-        ← Revenir à mon profil
-      </Link>
+      <Link href={PROFILE_LINK}>← Revenir à mon profil</Link>
       <Hgroup>
         <h1>🖋️ Recommandations</h1>
         <p>
@@ -26,10 +29,15 @@ function App() {
       </Hgroup>
       <Grid>
         {references.map((reference, i) => (
-          <Item key={reference.id} $delay={`${(i + 1) * ANIMATION_DELAY}ms`}>
+          <Item key={reference.author} $delay={`${(i + 1) * ANIMATION_DELAY}ms`}>
             <div className="item-container">
               <div className="item-header">
-                <img src={reference.avatar} alt={reference.author} />
+                <img
+                  src={reference.avatar}
+                  alt={reference.author}
+                  width={100}
+                  height={100}
+                />
                 <h2>{reference.author}</h2>
                 <h3>{reference.jobTitle}</h3>
               </div>
@@ -54,8 +62,8 @@ function App() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem 4rem;
   overflow: hidden;
+  padding: 2rem 1rem 4rem;
 
   @media (min-width: 768px) {
     padding: 3rem 2rem 5rem;
@@ -63,7 +71,7 @@ const Container = styled.div`
 `
 
 const Link = styled.a`
-  color: #000;
+  color: ${BLACK};
   margin-bottom: 2rem;
 `
 
@@ -81,14 +89,14 @@ const Hgroup = styled.hgroup`
 
 const Grid = styled.div`
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
   margin: 0 auto;
   width: 100%;
-  gap: 1rem;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 992px) {
@@ -101,45 +109,45 @@ const Item = styled.div`
   position: relative;
 
   .item-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    animation: ${({ $delay }) =>
+      `${ANIMATION_SPEED} ease ${$delay} forwards slidein`};
+    background-color: ${WHITE};
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px 0px ${BOX_SHADOW_COLOR};
+    color: ${BLACK};
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    color: #000;
-    padding: 32px;
-    border-radius: 8px;
-    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
-    transition: ${ANIMATION_SPEED};
+    height: 100%;
     opacity: 0;
-    animation: ${({ $delay }) => `${ANIMATION_SPEED} ease ${$delay} forwards slidein`};
+    padding: 32px;
+    position: relative;
+    transition: ${ANIMATION_SPEED};
+    width: 100%;
 
     &:hover {
-      box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 2px 4px 16px 0px ${BOX_SHADOW_COLOR};
     }
 
     @keyframes slidein {
       0% {
-        transform: translateX(-100%);
         opacity: 0;
+        transform: translateX(-100%);
       }
       100% {
-        transform: translateX(0%);
         opacity: 1;
+        transform: translateX(0%);
       }
     }
   }
 
   .item-header {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
 
     img {
       border-radius: 50%;
-      width: 100px;
       margin-bottom: 1rem;
     }
 
@@ -149,38 +157,34 @@ const Item = styled.div`
   }
 
   .item-text {
-    margin: 3rem 0;
     font-style: italic;
+    margin: 3rem 0;
     opacity: 0.8;
-    text-align: justify;
     position: relative;
+    text-align: justify;
 
-    &:before {
+    &:before,
+    &:after {
       font-family: 'Lobster', sans-serif;
-      content: '“';
+      font-size: 12rem;
       font-style: normal;
       font-weight: 400;
-      font-size: 12rem;
       line-height: 0rem;
-      position: absolute;
-      top: 3rem;
-      left: -2rem;
-      opacity: 0.1;
       margin: 0;
+      opacity: 0.1;
+      position: absolute;
+    }
+
+    &:before {
+      content: '“';
+      left: -2rem;
+      top: 3rem;
     }
 
     &:after {
-      font-family: 'Lobster', sans-serif;
-      content: '”';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12rem;
-      line-height: 0rem;
-      position: absolute;
       bottom: -3rem;
+      content: '”';
       right: -0.5rem;
-      opacity: 0.1;
-      margin: 0;
     }
 
     p {
@@ -193,12 +197,12 @@ const Item = styled.div`
   }
 
   a {
-    font-style: italic;
+    color: ${BLACK};
     font-size: 0.9rem;
-    text-align: center;
-    color: #000;
-    opacity: 0.8;
+    font-style: italic;
     margin-top: auto;
+    opacity: 0.8;
+    text-align: center;
   }
 `
 

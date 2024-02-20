@@ -1,16 +1,17 @@
-:root {
-  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: normal;
-  font-weight: normal;
+$top-color: rgba(93,224,230,1);
+$bottom-color: rgba(0,74,173,1);
 
+:root {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(0deg, $bottom-color 0%, $top-color 100%);
   color-scheme: light dark;
   color: #fff;
-  background: linear-gradient(0deg, rgba(0,74,173,1) 0%, rgba(93,224,230,1) 100%);
-
+  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
+  font-weight: normal;
+  line-height: normal;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -19,8 +20,8 @@
 
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
+  min-width: 320px;
 }
 
 h1 {

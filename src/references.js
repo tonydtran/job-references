@@ -7,7 +7,6 @@ import pierreFilstroff from './assets/pierreFilstroff.jpeg'
 
 export default [
   {
-    id: 1,
     author: 'Fati Cherkaoui',
     avatar: fatiCherkaoui,
     jobTitle: 'Product Manager',
@@ -16,7 +15,6 @@ export default [
     source: 'LinkedIn',
   },
   {
-    id: 2,
     author: 'Sixtine Caspar-Fille-Lambie',
     avatar: sixtineCaspar,
     jobTitle: 'Back End Developer',
@@ -25,7 +23,6 @@ export default [
     source: 'LinkedIn',
   },
   {
-    id: 3,
     author: 'Maxime Menigoz',
     avatar: maximeMenigoz,
     jobTitle: 'Tech Lead, Back End Developer',
@@ -34,7 +31,6 @@ export default [
     source: 'Malt',
   },
   {
-    id: 4,
     author: 'Stéphane Soler',
     avatar: stephaneSoler,
     jobTitle: 'Head of Innovation, iOS Developer, Full Stack Developer',
@@ -43,7 +39,6 @@ export default [
     source: 'Malt',
   },
   {
-    id: 5,
     author: 'Nadia Bourai',
     avatar: nadiaBourai,
     jobTitle: 'Software QA Engineer',
@@ -52,7 +47,6 @@ export default [
     source: 'LinkedIn',
   },
   {
-    id: 6,
     author: 'Pierre Filstroff',
     avatar: pierreFilstroff,
     jobTitle: 'Back End Developer, Android/iOS Developer, DevOPS',
