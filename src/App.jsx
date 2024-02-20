@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import references from './references'
 import './App.scss'
 
+const ANIMATION_SPEED = '400ms'
+const ANIMATION_DELAY = 150
+console.log(
+  "Hello 👋 ! N'hésitez-pas à consulter mon profil à cette adresse : https://linktr.ee/anthony_tranvan"
+)
+
 function App() {
   return (
     <Container>
@@ -19,23 +25,25 @@ function App() {
         </p>
       </Hgroup>
       <Grid>
-        {references.map(reference => (
-          <Item key={reference.id}>
-            <div className="item-header">
-              <img src={reference.avatar} alt={reference.author} />
-              <h2>{reference.author}</h2>
-              <h3>{reference.jobTitle}</h3>
+        {references.map((reference, i) => (
+          <Item key={reference.id} $delay={`${(i + 1) * ANIMATION_DELAY}ms`}>
+            <div className="item-container">
+              <div className="item-header">
+                <img src={reference.avatar} alt={reference.author} />
+                <h2>{reference.author}</h2>
+                <h3>{reference.jobTitle}</h3>
+              </div>
+              <q
+                className="item-text"
+                dangerouslySetInnerHTML={{
+                  __html: reference.text,
+                }}
+                cite={reference.link}
+              />
+              <a href={reference.link} target="_blank">
+                Source : {reference.source}
+              </a>
             </div>
-            <q
-              className="item-text"
-              dangerouslySetInnerHTML={{
-                __html: reference.text,
-              }}
-              cite={reference.link}
-            />
-            <a href={reference.link} target="_blank">
-              Source : {reference.source}
-            </a>
           </Item>
         ))}
       </Grid>
@@ -89,18 +97,38 @@ const Grid = styled.div`
 `
 
 const Item = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  color: #000;
-  padding: 32px;
-  border-radius: 8px;
-  box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
+  display: block;
+  position: relative;
 
-  &:hover {
-    box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.5);
+  .item-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #000;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    transition: ${ANIMATION_SPEED};
+    opacity: 0;
+    animation: ${({ $delay }) => `${ANIMATION_SPEED} ease ${$delay} forwards slidein`};
+
+    &:hover {
+      box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slidein {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
   }
 
   .item-header {
