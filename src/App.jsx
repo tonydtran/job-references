@@ -88,12 +88,11 @@ const Item = styled.div`
   color: #000;
   padding: 32px;
   border-radius: 8px;
-  box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s, transform 0.3s;
+  box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
 
   &:hover {
-    box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.3);
-    transform: scale(1.01);
+    box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.5);
   }
 
   .item-header {
