@@ -121,27 +121,29 @@ const Item = styled.div`
     position: relative;
 
     &:before {
-      font-family: 'Annapurna SIL';
+      font-family: 'Lobster', sans-serif;
+      content: '“';
       font-style: normal;
-      content: open-quote;
+      font-weight: 400;
       font-size: 12rem;
       line-height: 0rem;
       position: absolute;
-      top: 4.5rem;
-      left: -1.5rem;
+      top: 3rem;
+      left: -2rem;
       opacity: 0.1;
       margin: 0;
     }
 
     &:after {
-      font-family: 'Annapurna SIL';
+      font-family: 'Lobster', sans-serif;
+      content: '”';
       font-style: normal;
-      content: close-quote;
+      font-weight: 400;
       font-size: 12rem;
       line-height: 0rem;
       position: absolute;
-      bottom: -4.5rem;
-      right: -1.5rem;
+      bottom: -3rem;
+      right: -0.5rem;
       opacity: 0.1;
       margin: 0;
     }
