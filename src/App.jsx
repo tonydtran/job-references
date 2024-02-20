@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 import references from './references'
-import './App.css'
+import './App.scss'
 
 function App() {
   return (
     <Container>
+      <Link href="https://linktr.ee/anthony_tranvan">
+        ← Revenir à mon profil
+      </Link>
       <Hgroup>
         <h1>🖋️ Recommandations</h1>
         <p>
@@ -49,6 +52,11 @@ const Container = styled.div`
   @media (min-width: 768px) {
     padding: 3rem 2rem 5rem;
   }
+`
+
+const Link = styled.a`
+  color: #000;
+  margin-bottom: 2rem;
 `
 
 const Hgroup = styled.hgroup`
