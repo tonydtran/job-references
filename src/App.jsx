@@ -4,8 +4,9 @@ import './App.scss'
 
 const ANIMATION_SPEED = '400ms'
 const ANIMATION_DELAY = 150
-const BLACK = '#000'
-const WHITE = '#fff'
+const HGROUP_TEXT_COLOR = '#fff'
+const TEXT_COLOR = '#000'
+const CARD_BACKGROUND_COLOR = '#fff'
 const BOX_SHADOW_COLOR = 'rgba(0, 0, 0, 0.5)'
 const PROFILE_LINK = 'https://linktr.ee/anthony_tranvan'
 
@@ -32,9 +33,9 @@ function App() {
       </Hgroup>
       <Grid>
         {references.map((reference, i) => (
-          <Item key={reference.author} $delay={`${(i + 1) * ANIMATION_DELAY}ms`}>
-            <div className="item-container">
-              <div className="item-header">
+          <Card key={reference.author} $delay={`${(i + 1) * ANIMATION_DELAY}ms`}>
+            <div className="card-container">
+              <div className="card-header">
                 <img
                   src={reference.avatar}
                   alt={reference.author}
@@ -45,7 +46,7 @@ function App() {
                 <h3>{reference.jobTitle}</h3>
               </div>
               <q
-                className="item-text"
+                className="card-text"
                 dangerouslySetInnerHTML={{
                   __html: reference.text,
                 }}
@@ -55,7 +56,7 @@ function App() {
                 Source : {reference.source}
               </a>
             </div>
-          </Item>
+          </Card>
         ))}
       </Grid>
     </Container>
@@ -74,11 +75,12 @@ const Container = styled.div`
 `
 
 const Link = styled.a`
-  color: ${BLACK};
+  color: ${TEXT_COLOR};
   margin-bottom: 2rem;
 `
 
 const Hgroup = styled.hgroup`
+  color: ${HGROUP_TEXT_COLOR};
   margin-bottom: 2rem;
 
   p {
@@ -107,17 +109,17 @@ const Grid = styled.div`
   }
 `
 
-const Item = styled.div`
+const Card = styled.div`
   display: block;
   position: relative;
 
-  .item-container {
+  .card-container {
     animation: ${({ $delay }) =>
       `${ANIMATION_SPEED} ease ${$delay} forwards slidein`};
-    background-color: ${WHITE};
+    background-color: ${CARD_BACKGROUND_COLOR};
     border-radius: 8px;
     box-shadow: 2px 4px 8px 0px ${BOX_SHADOW_COLOR};
-    color: ${BLACK};
+    color: ${TEXT_COLOR};
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -143,7 +145,7 @@ const Item = styled.div`
     }
   }
 
-  .item-header {
+  .card-header {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -159,7 +161,7 @@ const Item = styled.div`
     }
   }
 
-  .item-text {
+  .card-text {
     font-style: italic;
     margin: 3rem 0;
     opacity: 0.8;
@@ -200,7 +202,7 @@ const Item = styled.div`
   }
 
   a {
-    color: ${BLACK};
+    color: ${TEXT_COLOR};
     font-size: 0.9rem;
     font-style: italic;
     margin-top: auto;

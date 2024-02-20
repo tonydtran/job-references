@@ -1,12 +1,13 @@
 $top-color: rgba(93,224,230,1);
 $bottom-color: rgba(0,74,173,1);
+$text-color-default: #fff;
 
 :root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background: linear-gradient(0deg, $bottom-color 0%, $top-color 100%);
   color-scheme: light dark;
-  color: #fff;
+  color: $text-color-default;
   font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   font-weight: normal;
