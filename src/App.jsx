@@ -24,10 +24,10 @@ function App() {
       <Hgroup>
         <h1>🖋️ Recommandations</h1>
         <p>
-          Cette page regroupe des recommandations reçues via diverses
+          Cette page regroupe des recommandations sur diverses
           plateformes (LinkedIn, Malt, etc) que j'ai reçues de mes anciens
           collègues, clients et partenaires avec qui j'ai eu la chance de
-          travailler. En grand merci à eux pour leur confiance et leur
+          travailler. Encore un grand merci à eux pour leur confiance et leur
           témoignage.
         </p>
       </Hgroup>
