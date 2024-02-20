@@ -122,6 +122,7 @@ const Item = styled.div`
 
     &:before {
       font-family: 'Annapurna SIL';
+      font-style: normal;
       content: open-quote;
       font-size: 12rem;
       line-height: 0rem;
@@ -134,6 +135,7 @@ const Item = styled.div`
 
     &:after {
       font-family: 'Annapurna SIL';
+      font-style: normal;
       content: close-quote;
       font-size: 12rem;
       line-height: 0rem;
