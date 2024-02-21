@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import references from './references'
 import './App.scss'
 
-const ANIMATION_SPEED = '400ms'
-const ANIMATION_DELAY = 150
+const ANIMATION_SPEED = 500
+const ANIMATION_DELAY = 200
 const HGROUP_TEXT_COLOR = '#fff'
 const TEXT_COLOR = '#000'
 const CARD_BACKGROUND_COLOR = '#fff'
@@ -80,6 +80,7 @@ const Container = styled.article`
 
 const Link = styled.a`
   color: ${TEXT_COLOR};
+  width: fit-content;
 `
 
 const Hgroup = styled.hgroup`
@@ -121,7 +122,7 @@ const Card = styled.article`
 
   .card-container {
     animation: ${({ $delay }) =>
-      `${ANIMATION_SPEED} ease ${$delay} forwards slidein`};
+      `${ANIMATION_SPEED}ms ease ${$delay} forwards slidein`};
     background-color: ${CARD_BACKGROUND_COLOR};
     border-radius: 8px;
     box-shadow: 2px 4px 8px 0px ${BOX_SHADOW_COLOR};
@@ -132,7 +133,7 @@ const Card = styled.article`
     opacity: 0;
     padding: 32px;
     position: relative;
-    transition: ${ANIMATION_SPEED};
+    transition: ${ANIMATION_SPEED}ms;
     width: 100%;
 
     &:hover {
@@ -208,12 +209,14 @@ const Card = styled.article`
   }
 
   a {
+    align-self: center;
     color: ${TEXT_COLOR};
     font-size: 0.9rem;
     font-style: italic;
     margin-top: auto;
     opacity: 0.8;
     text-align: center;
+    width: fit-content;
   }
 `
 
