@@ -1,8 +1,12 @@
 {
   "name": "job-references",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.3.x <=20.11.0",
+    "npm": ">=10.x.x <=10.2.4"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,7 +19,6 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
-    "@mojojoejo/vite-plugin-purgecss": "^1.1.0",
     "@swc/core": "^1.4.2",
     "@swc/plugin-styled-components": "^1.5.118",
     "@types/react": "^18.2.55",
@@ -29,6 +32,7 @@
     "sharp": "^0.33.2",
     "vite": "^5.1.0",
     "vite-imagetools": "^6.2.9",
+    "vite-plugin-purgecss-updated-v5": "^1.2.0",
     "vite-plugin-webfont-dl": "^3.9.1"
   }
 }

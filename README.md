@@ -1,9 +1,13 @@
 # Reference page
 Simple page built in React with Vite to display your work references.
 
+## Requirements
+- `node` >= v20.3.x (currently tested on v20.11.0)
+- `npm` >= v10.x (currently tested on v10.2.4)
+
 ## Get started
-1. After cloning the repo, simply run `yarn` command within your terminal to install dependencies.
-2. To start dev server, `yarn dev`.
+1. After cloning the repo, simply run `npm install` command within your terminal to install dependencies.
+2. To start dev server, `npm run dev`.
 
 ## Customize
 1. Replace site icon in `public` folder (optional).
@@ -18,7 +22,7 @@ Simple page built in React with Vite to display your work references.
 - [React](https://react.dev/) (main app library)
 - [Sass](https://sass-lang.com/) (for global styles)
 - [Styled-components](https://styled-components.com/) (styles for components with CSS-in-JS approch)
-- [Vite-imagetools](https://github.com/JonasKruckenberg/imagetools) (optimize image format and size). Note: You may have issue while installing `vite-imagetools`. Use `yarn add -D sharp --ignore-engines` to force installation.
+- [Vite-imagetools](https://github.com/JonasKruckenberg/imagetools) (optimize image format and size)
 
 ## Contributing
 This project has been done really quickly ans has many things to improve. Feel free to contribute and give feedback! Happy coding!
