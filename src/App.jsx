@@ -63,11 +63,15 @@ function App() {
   )
 }
 
-const Container = styled.div`
+const Container = styled.article`
   display: flex;
   flex-direction: column;
   overflow: hidden;
   padding: 2rem 1rem 4rem;
+
+  & > * + * {
+    margin-top: 2rem;
+  }
 
   @media (min-width: 768px) {
     padding: 3rem 2rem 5rem;
@@ -76,15 +80,18 @@ const Container = styled.div`
 
 const Link = styled.a`
   color: ${TEXT_COLOR};
-  margin-bottom: 2rem;
 `
 
 const Hgroup = styled.hgroup`
   color: ${HGROUP_TEXT_COLOR};
-  margin-bottom: 2rem;
 
   p {
+    font-size: 1.0rem;
     font-weight: 600;
+
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 
   & > * + * {
@@ -96,7 +103,6 @@ const Grid = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
-  margin: 0 auto;
   width: 100%;
 
   @media (min-width: 768px) {
@@ -109,7 +115,7 @@ const Grid = styled.div`
   }
 `
 
-const Card = styled.div`
+const Card = styled.article`
   display: block;
   position: relative;
 
