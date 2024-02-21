@@ -5,5 +5,13 @@ import { imagetools } from 'vite-imagetools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [webfontDownload(), imagetools(), react()],
+  plugins: [
+    webfontDownload(),
+    imagetools(),
+    react({
+      plugins: [
+        ['@swc/plugin-styled-components', { displayName: true, ssr: true }],
+      ],
+    }),
+  ],
 })

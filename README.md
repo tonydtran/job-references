@@ -18,7 +18,7 @@ Simple page built in React with Vite to display your work references.
 - [React](https://react.dev/) (main app library)
 - [Sass](https://sass-lang.com/) (for global styles)
 - [Styled-components](https://styled-components.com/) (styles for components with CSS-in-JS approch)
-- [Vite-imagetools](https://github.com/JonasKruckenberg/imagetools) (optimize image format and size)
+- [Vite-imagetools](https://github.com/JonasKruckenberg/imagetools) (optimize image format and size). Note: You may have issue while installing `vite-imagetools`. Use `yarn add -D sharp --ignore-engines` to force installation.
 
 ## Contributing
 This project has been done really quickly ans has many things to improve. Feel free to contribute and give feedback! Happy coding!
