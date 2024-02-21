@@ -10,7 +10,7 @@ const CARD_BACKGROUND_COLOR = '#fff'
 const BOX_SHADOW_COLOR = 'rgba(0, 0, 0, 0.5)'
 const PROFILE_LINK = 'https://linktr.ee/anthony_tranvan'
 
-console.log(
+console.info(
   `
     Hello 👋 ! N'hésitez-pas à consulter mon profil à cette adresse : ${PROFILE_LINK}
     Vous pouvez également retrouver le repo de ce projet ici : https://github.com/tonydtran/job-references

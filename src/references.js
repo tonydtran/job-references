@@ -1,9 +1,9 @@
-import stephaneSoler from './assets/stephaneSoler.jpg'
-import fatiCherkaoui from './assets/fatiCherkaoui.jpeg'
-import maximeMenigoz from './assets/maximeMenigoz.jpeg'
-import sixtineCaspar from './assets/sixtineCaspar.jpeg'
-import nadiaBourai from './assets/nadiaBourai.jpeg'
-import pierreFilstroff from './assets/pierreFilstroff.jpeg'
+import stephaneSoler from './assets/stephaneSoler.jpg?w=100&h=100&format=webp'
+import fatiCherkaoui from './assets/fatiCherkaoui.jpeg?w=100&h=100&format=webp'
+import maximeMenigoz from './assets/maximeMenigoz.jpeg?w=100&h=100&format=webp'
+import sixtineCaspar from './assets/sixtineCaspar.jpeg?w=100&h=100&format=webp'
+import nadiaBourai from './assets/nadiaBourai.jpeg?w=100&h=100&format=webp'
+import pierreFilstroff from './assets/pierreFilstroff.jpeg?w=100&h=100&format=webp'
 
 export default [
   {
